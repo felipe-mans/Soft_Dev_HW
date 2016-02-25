@@ -5,7 +5,7 @@ var cl = document.getElementById("clear");
 
 //El DVD logo
 var logo = new Image();
-logo.src = "filename";
+logo.src = "logo_dvd.jpg";
 
 //Los Buttons
 var startDraw = document.getElementById("start");
@@ -17,6 +17,10 @@ var requestID;
 var counter = 0;
 var growing = true;
 var radius = 0;
+var dx = 214;
+var dy = 239;
+var down = true;
+var right = true;
 
 function drawDot() {
 
@@ -60,8 +64,32 @@ function stop() {
 };
 
 function dvd() {
+  ctx.clearRect(0,0,c.width, c.height);
+  if (dy <= 0)
+    down = true;
+  else if (dy >= c.height - 50)
+    down = false;
 
+  if (dx <= 0)
+    right = true;
+  else if (dx >= c.width - 100)
+    right = false;
 
+  if (down)
+    dy += Math.random() + 1;
+
+  else
+    dy -= Math.random() + 1;
+
+  if (right)
+    dx += Math.random() + 1;
+
+  else
+    dx -= Math.random() + 1;
+
+  ctx.beginPath();
+  ctx.drawImage(logo, dx, dy, 100, 50);
+  requestID = window.requestAnimationFrame(dvd);
 };
 
 startDraw.addEventListener("click", drawDot);
