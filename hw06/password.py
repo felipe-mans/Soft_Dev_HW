@@ -43,12 +43,11 @@ def strength_pass(password):
             print "Password strength: GOOD\n"
             print "Rating: " + str(strength)
         else:
-            print "Password strength: STRONG\n"
-            if strength >= 10:
-                if len(char) == 0:
+            if len(char) == 0:
                     strength = 8
-                else:
-                    strength = 10
+            print "Password strength: STRONG\n"
+            if strength > 10:
+                strength = 10
             print "Rating: " + str(strength)
     
     else:
