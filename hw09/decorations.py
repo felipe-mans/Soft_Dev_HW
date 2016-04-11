@@ -19,3 +19,21 @@ def function_time(f):
 def hello(*arg):
     time.sleep(1)
     return "hello world"
+
+# Mr. Brown's code
+
+def randList(n, lower = -100, upper = 100):
+    l = []
+    for i in range(n):
+        l.append(
+
+
+@timer
+@name_log
+def qsort(L):
+    if len(L) <= 1:
+        return L
+    pivot = random.choice(L)
+    lh = [ x for x in L if x < pivot ]
+    uh = [ x for x in L if x > pivot ]
+    return qsort(lh) + ([pivot] * L.count(pivot)) +  qsort(uh)

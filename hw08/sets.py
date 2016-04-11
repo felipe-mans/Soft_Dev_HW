@@ -14,11 +14,7 @@ def symmetric_diff(s1, s2):
     return set_diff(s1,s2) + set_diff(s2,s1)
 
 def cartesian_prod(s1, s2):
-    result = []
-    for x in s1:
-        hold = [(x,a) for a in s2]
-        result += hold
-    return result
+    return [(x,y) for x in s1 for y in s2]
 
 s1 = [1,2,3]
 s2 = [2,3,4]
