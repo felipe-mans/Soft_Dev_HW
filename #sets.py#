@@ -1,9 +1,0 @@
-import math
-
-def union(s1, s2):
-    return [x for x if x in s1 and not in s2]
-
-s = [1,2,3]
-ss = [2.3.4]
-
-print union(s, ss)
