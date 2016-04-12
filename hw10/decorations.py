@@ -14,8 +14,19 @@ def function_time(f):
         return result
     return inside
 
-@timeFunc
-@printArgs
+@function_time
+@print_function
 def hello(*arg):
     time.sleep(1)
     return "hello world"
+
+
+@function_time
+@print_function
+def qsort(L):
+    if len(L) <= 1:
+        return L
+    pivot = random.choice(L)
+    lh = [ x for x in L if x < pivot ]
+    uh = [ x for x in L if x > pivot ]
+    return qsort(lh) + ([pivot] * L.count(pivot)) +  qsort(uh)
