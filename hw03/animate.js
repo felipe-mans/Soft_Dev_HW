@@ -64,6 +64,10 @@ function stop() {
 };
 
 function dvd() {
+  counter = counter + 1;
+  if (counter > 1)
+    window.cancelAnimationFrame(requestID);
+
   ctx.clearRect(0,0,c.width, c.height);
   if (dy <= 0)
     down = true;
